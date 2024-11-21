@@ -1,0 +1,84 @@
+body{
+    background-color: red;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
+
+#site_wrap{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 300px) 1fr;
+    grid-gap: 10px;
+    grid-template-rows: 99px 360px 156px 156px 1fr;
+    grid-template-areas: 
+        "header header header header header header"
+        ". featured_header featured_header featured_header featured_main ."
+        ". featured_profile featured_profile featured_profile featured_profile ."
+        ". content content2 content3 content4 ."
+        "footer footer footer footer footer footer"
+    ;
+}
+
+.header{
+    background-color: aqua;
+    grid-area: header;
+}
+
+.featured_header{
+    background-color: rgb(55, 0, 255);
+    grid-area: featured_header;
+}
+
+.featured_main{
+    background-color: rgb(238, 255, 0);
+    grid-area: featured_main;
+}
+
+.featured_profile{
+    background-color: rgb(0, 255, 13);
+    grid-area: featured_profile;
+}
+
+.content{
+    background-color: rgb(255, 0, 200);
+    grid-area: content;
+}
+
+.content2{
+    background-color: rgb(99, 4, 4);
+    grid-area: content2;
+}
+
+.content3{
+    color: aliceblue;
+    background-color: rgb(0, 0, 0);
+    grid-area: content3;
+}
+
+.content4{
+    background-color: rgb(253, 101, 0);
+    grid-area: content4;
+}
+
+.footer{
+    background-color: rgb(201, 201, 201);
+    grid-area: footer;
+}
+
+@media screen and (max-width:480px){
+    #site_wrap{
+        grid-template-columns: 1fr repeat(4, 100px) 1fr;
+        grid-template-rows: 99px 171px 159px 156px 100px 100px 1fr;
+        grid-template-areas: 
+        "header header header header header header"
+        ". featured_header featured_header featured_header featured_header ."
+        ". featured_main featured_main featured_main featured_main ."
+        ". featured_profile featured_profile featured_profile featured_profile ."
+        ". content content content2 content2 ."
+        ". content3 content3 content4 content4 ."
+        "footer footer footer footer footer footer"
+    ;
+    }
+}
